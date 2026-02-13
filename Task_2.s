@@ -8,7 +8,7 @@
 fill_ram_indirect:
     # Store FFh into RAM locations 50H - 58H using indirect addressing
 
-    lea ram+0x50(%rip), %ebx #load address location of 50H in ram into the rdi register 
+    lea ram+0x50, %ebx #load address location of 50H in ram into the rdi register 
     mov $0xFF, %eax #load the proper hex value into the eax register
 
     mov %eax, (%ebx) #Move the data in eax into ram locations

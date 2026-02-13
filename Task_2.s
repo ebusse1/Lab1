@@ -9,16 +9,17 @@ fill_ram_indirect:
     # Store FFh into RAM locations 50H - 58H using indirect addressing
 
     lea ram+0x50(%rip), %rdi #load address location of 50H in ram into the rdi register 
+    mov $0xFF, %eax
 
-    movb $0xFF, (%rdi) #Move into locations
-    movb $0xFF, 1(%rdi)
-    movb $0xFF, 2(%rdi)
-    movb $0xFF, 3(%rdi)
-    movb $0xFF, 4(%rdi)
-    movb $0xFF, 5(%rdi)
-    movb $0xFF, 6(%rdi)
-    movb $0xFF, 7(%rdi)
-    movb $0xFF, 8(%rdi)
+    mov %eax, (%rdi) #Move into locations
+    mov %eax, 1(%rdi)
+    mov %eax, 2(%rdi)
+    mov %eax, 3(%rdi)
+    mov %eax, 4(%rdi)
+    mov %eax, 5(%rdi)
+    mov %eax, 6(%rdi)
+    mov %eax, 7(%rdi)
+    mov %eax, 8(%rdi)
 
     ret
 

@@ -19,7 +19,7 @@ load_sum:
     addl $9,  %eax
     addl $10, %eax              # eax = 55 (0x37)
 
-    movb %al, ram+0x50(%rip)    
+    mov %eax, ram+0x50(%rip)    
 
     ret
 
